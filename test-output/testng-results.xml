@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="13729" started-at="2018-01-08T18:20:38Z" finished-at="2018-01-08T18:20:51Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.freecrm.cucumber.runner.LoginRunner@598067a5]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="LoginTest" duration-ms="13729" started-at="2018-01-08T18:20:38Z" finished-at="2018-01-08T18:20:51Z">
+      <class name="com.freecrm.cucumber.runner.LoginRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.freecrm.cucumber.runner.LoginRunner@598067a5]" name="setUpClass" is-config="true" duration-ms="806" started-at="2018-01-08T23:50:38Z" finished-at="2018-01-08T23:50:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.freecrm.cucumber.runner.LoginRunner@598067a5]" name="feature" duration-ms="12600" started-at="2018-01-08T23:50:39Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-01-08T23:50:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Login features of FREECRM.COM]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.freecrm.cucumber.runner.LoginRunner@598067a5]" name="tearDownClass" is-config="true" duration-ms="9" started-at="2018-01-08T23:50:51Z" finished-at="2018-01-08T23:50:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.freecrm.cucumber.runner.LoginRunner -->
+    </test> <!-- LoginTest -->
+  </suite> <!-- Suite -->
+</testng-results>
