@@ -1,30 +1,29 @@
 package com.freecrm.cucumber.stepdefination;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import com.freecrm.cucumber.config.uiActions.LoginPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class StepDefination_Login {
-	WebDriver driver;
+	
+	//private final Logger log = LoggerUtil.getLogger(StepDefination_Login.class);
+	private LoginPage objLoginPage; 
 
 	@Given("^User is on Login Page$")
 	public void user_is_on_Login_Page() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/souni_apu/workspace/com.freecrm.cucumber/src/main/resources/drivers/chromedriver.exe");
-	    driver = new ChromeDriver();
-	    driver.get("https:\\www.google.com");
+		objLoginPage = new LoginPage();
 	}
 
-	@When("^User enters User Name \"([^\"]*)\"and Password \"([^\"]*)\"$")
-	public void user_enters_User_Name_and_Password(String arg1, String arg2) throws Throwable {
-	   
+	@When("^User enters User Name as \"([^\"]*)\" and Password as \"([^\"]*)\"$")
+	public void user_enters_User_Name_as_and_Password_as(String arg1, String arg2) throws Throwable {
+	    objLoginPage.setUserName(arg1);
+	    objLoginPage.setPassword(arg2);
 	}
 
 	@When("^User clicks on Login button$")
 	public void user_clicks_on_Login_button() throws Throwable {
-	   
+	   objLoginPage.clickOnLoginBtn();
 	}
 
 	@Then("^User lands to home page$")
