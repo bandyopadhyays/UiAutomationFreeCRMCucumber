@@ -6,12 +6,16 @@ import org.openqa.selenium.WebDriver;
 import com.freecrm.cucumber.config.browser.BrowserType;
 import com.freecrm.cucumber.config.browser.ChromeBrowser;
 import com.freecrm.cucumber.config.browser.FirefoxBrowser;
+import com.freecrm.cucumber.config.configeader.ConfigReader;
 import com.freecrm.cucumber.util.LoggerUtil;
+
+import cucumber.api.java.Before;
 
 public class TestBase {
 
-	private WebDriver driver;
-	private static final Logger log = LoggerUtil.getLogger(TestBase.class);
+	public static WebDriver driver;
+	private final Logger log = LoggerUtil.getLogger(TestBase.class);
+	private ConfigReader objConfig = new ConfigReader();
 
 	public WebDriver getDriverInstance(BrowserType bType) throws Exception {
 		try {
@@ -35,5 +39,21 @@ public class TestBase {
 			e.printStackTrace();
 			throw e;
 		}
+	}
+	
+	
+	public void setUpDriver(BrowserType bType) throws Exception {
+		driver = getDriverInstance(bType);
+		driver.manage().window().maximize();
+		driver.get(objConfig.getAppURL());
+	}
+	
+	public void tearDown() {
+		driver.quit();
+	}
+	
+	@Before
+	public void setUp() throws Exception {
+		setUpDriver(objConfig.getBrowser());
 	}
 }

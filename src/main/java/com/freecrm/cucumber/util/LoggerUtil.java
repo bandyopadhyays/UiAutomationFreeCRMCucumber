@@ -16,7 +16,7 @@ public class LoggerUtil {
 		} else {
 			try {
 				PropertyConfigurator
-						.configure(ResourceUtil.getResourceInputStream("com.freecrm.cucumber/src/main/resources/configfile/log4j.properties"));
+						.configure(ResourceUtil.getResourceInputStream("/src/main/resources/configfile/log4j.properties"));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
